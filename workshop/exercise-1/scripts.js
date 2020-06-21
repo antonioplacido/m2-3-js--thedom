@@ -14,17 +14,15 @@ const header2 = document.createElement(`h2`);
 header2.innerText = `The Slap Bet (Season 2, Episode 9)`
 homepage.appendChild(header2);
 
-const imdb = document.createElement(`p`);
+const imdb = document.createElement(`p`);  //actually wasn't in the solution?
 imdb.innerText = `IMDB Rating: 9.5`;
 homepage.appendChild(imdb);
 
-
-const pictureRobin = document.createElement(`img`);
+const pictureRobin = document.createElement(`img`);  //nts : position of where the image is, is important, css didnt fix the position of the image//
 pictureRobin.src = './images/robin-sparkles.jpg';
 homepage.appendChild(pictureRobin);
 
-
-const para2 = document.createElement(`p`);
+const para2 = document.createElement(`p`); // so the spacing of where you type your text matters...//
 para2.innerText = `In this episode, Ted is learning a few secrets about Robin, namely that she has
 an unexplained aversion to the mall. Robin refuses to tell Ted and the others
 why she won’t go to the mall, so the gang forms their own theories. Marshall
@@ -47,7 +45,6 @@ const aSource = document.createElement(`a`);
 aSource.href = `https://fonts.googleapis.com/css?family=Open+Sans|Playfair+Display&display=swap`;
 aSource.innerText = `Source`;
 homepage.appendChild(aSource);
-
 
 const stylesheet = document.createElement('link');
 stylesheet.rel = 'stylesheet';

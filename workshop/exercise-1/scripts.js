@@ -1,5 +1,5 @@
 
-0const homepage = document.querySelector(`main`);
+const homepage = document.querySelector(`main`);
 
 const header1 = document.createElement(`h1`);
 header1.innerText = `The best How I Met Your Mother episode (according to fans)`

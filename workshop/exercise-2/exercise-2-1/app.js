@@ -1,29 +1,50 @@
 // Preset values
 const FROGS = 3;
-const BIGBOI = document.querySelector(`main`);
+const track = document.getElementById("track");
 
 // 1. Create for loop that makes use of FROGS to know how many lanes to create.
-
-for (let i=1; i<= FROGS; i++){
-
-    const zone = document.createElement("span");
-    zone.innerText = "Lane" + i;
-
 // 2. Create li
 
-    const lane = document.createElement("li");
+for (let numLanes = 1; numLanes <= FROGS; numLanes++) {
+  let zone = document.createElement("li");
+  track.appendChild(zone);
 
-// 3. Create span and add it to the li
+  // 3. Create span and add it to the li
 
-    const zone = document.createElement("span");
-    zone.innerText = "Lane" + i;
-    BIGBOI.appendChild(lane);
-    lane.appendChild(zone);
+  let trackNumber = document.createElement("span");
+  trackNumber.innerText = numLanes;
+  zone.appendChild(trackNumber);
 
-// 4. Assign an id to each lane
-
-    lane.id = "Lane" + i;
-
+  // 4. Assign an id to each lane
+  //   Assign each lane an id following the this pattern: lane-<LANE_NUMBER>. e.g. lane-1, lane-2, lane-3, etc.
+  zone.id = `lane-${numLanes}`;
 }
 
-//not uploading to github?!
+let flippy = [];
+for (let j = 0; j < FROGS; j++) {
+  const frogRacer = frogStable[j];
+  flippy.push(frogRacer);
+}
+
+console.log(flippy);
+
+// we now have an array returning 3 indexes with objects, containing the propertiies of the frogs in frogStable
+
+console.log(flippy.length); // returning 3
+
+// Use the racers array to assign each frog to a lane.
+
+flippy.forEach(function readyRacers(flippyRacer, y) {
+  const newFlippy = document.createElement("span");
+  document.getElementById(`lane-${y + 1}`).appendChild(newFlippy);
+
+  newFlippy.classList.add("frog");
+
+  newFlippy.style.background = flippyRacer.color;
+
+  newFlippy.innerText = flippyRacer.number;
+
+  // make progress bar for the array flippy
+
+  flippy[y].progress = 0;
+});
